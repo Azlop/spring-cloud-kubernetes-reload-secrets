@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: reload-secrets-service
+spec:
+  selector:
+    app: reload-secrets-service
+  ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 30081
+  type: NodePort

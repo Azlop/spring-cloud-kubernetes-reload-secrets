@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reload-secret-service
+spec:
+  selector:
+    matchLabels:
+      app: reload-secret-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: reload-secret-service
+    spec:
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: reload-secret
+      containers:
+        - name: reload-secret-service
+          image: reload-secret-service:latest
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /etc/secret-volume
+              readOnly: true
+          ports:
+          - containerPort: 8080
