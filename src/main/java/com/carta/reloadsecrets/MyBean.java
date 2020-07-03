@@ -12,10 +12,10 @@ public class MyBean {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyBean.class);
 	
 	@Autowired
-	private MyConfig myConfig;
+	private MySecret mySecret;
 	
 	@Scheduled(fixedDelay = 3000)
 	public void printPassword() {
-		LOGGER.debug("The password is: {}", myConfig.getPassword());
+		LOGGER.debug("The password is: {}", mySecret.getPassword());
 	}
 }

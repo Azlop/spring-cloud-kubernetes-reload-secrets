@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties(prefix = "mysecret")
-public class MyConfig {
+public class MySecret {
 
 	private String password;
 
