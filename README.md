@@ -1,24 +1,27 @@
 # spring-cloud-kubernetes-reload-secrets
 Reload Secrets
 
-# Description
+## Description
 Simple project to test reload of a Secret when it changes on the fly.
 
-# Setup
-1. Start minikube
-$ minikube start
+## Setup
+Start minikube
 
-2. Create the required roles so Spring Cloud Kubernetes can interact with Kubernetes itself
-$ kubectl create -f k8s/set-roles.yaml
+	minikube start
 
-3. Run deploy.sh
-$ ./deploy.sh
+Create the required roles so Spring Cloud Kubernetes can interact with Kubernetes itself
 
-# Versions used
+	kubectl create -f k8s/set-roles.yaml
+
+Run deploy.sh
+
+	./deploy.sh
+
+## Versions used
 Ubuntu 20.04 LTS
 docker - 19.03.8
 kubectl - v1.18.3
 minikube - v1.11.0
 
-# Useful info
+## Useful info
 https://cloud.spring.io/spring-cloud-static/spring-cloud-kubernetes/1.1.3.RELEASE/reference/html/
